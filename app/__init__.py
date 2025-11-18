@@ -2,7 +2,7 @@ from flask import Flask
 
 from .users import bp_users
 
-from .extensions import db, migrate, api
+from .extensions import db, migrate, api, ma
 
 from .config import Config
 
@@ -13,6 +13,7 @@ server = Flask(__name__)
 server.config.from_object(Config)
 
 db.init_app(server)
+ma.init_app(server)
 migrate.init_app(server, db)
 api.init_app(server)
 
