@@ -1,8 +1,8 @@
 from .extensions import db
 
 
-class User(db.Model):
+class UserSchema(db.Model):
     __tablename__ = "users"
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.UUID(as_uuid=True), primary_key=True)
     username = db.Column(db.String(128))

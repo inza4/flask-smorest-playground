@@ -1,5 +1,8 @@
 from flask import Flask
-from .extensions import db, migrate
+
+from .users import bp_users
+
+from .extensions import db, migrate, api
 
 from .config import Config
 
@@ -11,3 +14,7 @@ server.config.from_object(Config)
 
 db.init_app(server)
 migrate.init_app(server, db)
+api.init_app(server)
+
+
+api.register_blueprint(bp_users)
