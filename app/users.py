@@ -3,8 +3,8 @@ from flask_smorest import Blueprint
 from marshmallow import Schema, fields
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 
-from .models import UserSchema
-from .extensions import db
+from models import UserSchema
+from extensions import db
 
 import uuid
 
